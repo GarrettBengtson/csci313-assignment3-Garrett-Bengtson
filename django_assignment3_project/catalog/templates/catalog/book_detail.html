@@ -14,10 +14,10 @@
 
     {% for copy in book.bookinstance_set.all %}
       <hr />
-      <p
-        class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
-        {{ copy.get_status_display }}
-      </p>
+        <p 
+          class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
+          <mark>Status: {{ copy.get_status_display }}</mark>
+        </p>
       {% if copy.status != 'a' %}
         <p><strong>Due date to be returned:</strong> {{ copy.due_back }}</p>
       {% endif %}

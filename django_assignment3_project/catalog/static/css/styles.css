@@ -4,6 +4,26 @@
     list-style: none;
 }
 
+body {
+    background-color: pink;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    color: rgb(73, 138, 102);
+    font-size: large;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    color: rgb(110, 153, 110);
+}
+
+mark {
+    font-weight: bold;
+}
+
 #logout-form {
     display: inline;
 }
