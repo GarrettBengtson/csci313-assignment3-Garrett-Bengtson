@@ -32,3 +32,29 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+
+from django.views import generic
+
+class BookListView(generic.ListView):
+    model = Book
+    # Pagination is used to prevent long load times
+    paginate_by = 5
+    # An example of changing the query to return 5 books containing 'war' in the title
+    # def get_queryset(self):
+    #     return Book.objects.filter(title__icontains='war')[:5]
+
+    # An example showing how to add a variable 'some_data' to the context
+    # def get_context_data(self, **kwargs):
+    #     context = super(BookListView, self).get_context_data(**kwargs)
+    #     context['some_data'] = 'This is just some data'
+    #     return context
+    
+class BookDetailView(generic.DetailView):
+    model = Book
+
+class AuthorListView(generic.ListView):
+    model = Author
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
